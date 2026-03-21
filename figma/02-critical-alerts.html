@@ -1,0 +1,267 @@
+<!-- Critical Alerts -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#e5e2e1",
+                        "surface": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "on-primary": "#432c00",
+                        "on-primary-fixed": "#281900",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "surface-bright": "#393939",
+                        "on-secondary": "#2f3131",
+                        "secondary": "#c7c6c6",
+                        "outline": "#9e8e78",
+                        "surface-tint": "#ffba38",
+                        "primary-fixed": "#ffdeac",
+                        "on-tertiary-fixed-variant": "#004e60",
+                        "on-primary-fixed-variant": "#604100",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#b8b8b8",
+                        "tertiary-fixed-dim": "#43d6ff",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary": "#003543",
+                        "tertiary-container": "#00d2fe",
+                        "outline-variant": "#514532",
+                        "on-error": "#690005",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-fixed": "#001f28",
+                        "background": "#131313",
+                        "on-primary-container": "#6b4900",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed-variant": "#464747",
+                        "primary-fixed-dim": "#ffba38",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-container": "#484949",
+                        "inverse-primary": "#7e5700",
+                        "tertiary-fixed": "#b5ebff",
+                        "tertiary": "#a4e7ff",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "primary-container": "#ffb300",
+                        "surface-dim": "#131313",
+                        "surface-container-highest": "#353534",
+                        "on-surface-variant": "#d6c4ac",
+                        "on-surface": "#e5e2e1",
+                        "primary": "#ffd79b",
+                        "on-tertiary-container": "#00566a",
+                        "surface-variant": "#353534"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .scanline-overlay {
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.05),
+                rgba(0, 0, 0, 0.05) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+        }
+        .amber-glow {
+            background: linear-gradient(45deg, #ffd79b, #ffb300);
+        }
+    </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
+<header class="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-surface border-b border-outline-variant/20 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<h1 class="font-mono text-lg tracking-widest uppercase font-bold text-on-surface">POCKETCLINIC</h1>
+</div>
+<button class="p-2 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-secondary" data-icon="settings">settings</span>
+</button>
+</header>
+<main class="relative pb-24 min-h-screen">
+<div class="fixed inset-0 scanline-overlay z-0"></div>
+<div class="relative z-10 max-w-4xl mx-auto px-6 pt-8">
+<section class="flex flex-col md:flex-row gap-8 items-start md:items-end mb-12">
+<div class="relative">
+<div class="w-32 h-32 md:w-48 md:h-48 bg-surface-container-highest border border-outline-variant/20 flex items-center justify-center overflow-hidden">
+<img alt="Alex Rivera Profile" class="w-full h-full object-cover grayscale brightness-75 contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeVkuu-TtJ-yS0kfbOcCUvWpp3WSFjDT8CkQerKGkGxhG0LNIabdvDgbdv-f5kU4cYEzEarrqihmzGe0Xn14KrlSa7j59n0c-ICW1QR5H-RVAuucKBdVe8TTUovGUCsDhgUcA9PKjUNdK1B1Ca51Lj6JOwMpyVF6n_ZYd71KdTvNSISqtBpz-OsThKpKeP0eS2nsHpRT4arLfpMknVE6CI0_xzheIkDMPPFsiwXngVJZb5OjI7BhIewPmVguh01N2rcoddvQ6HqQ1o"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary-container px-3 py-1 font-mono text-xs font-bold text-on-primary">
+                        [ LVL 09 ]
+                    </div>
+</div>
+<div class="flex-1 space-y-4">
+<div>
+<p class="font-mono text-primary text-sm tracking-tighter mb-1">PATIENT_ID: PX-9928-B</p>
+<h2 class="text-4xl md:text-6xl font-headline font-light tracking-tight text-on-background">
+                            Alex Rivera
+                        </h2>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="bg-surface-container px-4 py-2 flex flex-col border-l-2 border-primary">
+<span class="text-[10px] font-mono uppercase text-on-secondary-container">Vitals Status</span>
+<span class="font-mono text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">circle</span> STABLE
+                            </span>
+</div>
+<div class="bg-surface-container px-4 py-2 flex flex-col border-l-2 border-primary">
+<span class="text-[10px] font-mono uppercase text-on-secondary-container">Blood Type</span>
+<span class="font-mono text-on-surface">O- POSITIVE</span>
+</div>
+<div class="bg-surface-container px-4 py-2 flex flex-col border-l-2 border-primary">
+<span class="text-[10px] font-mono uppercase text-on-secondary-container">Clearance</span>
+<span class="font-mono text-on-surface">LEVEL_04</span>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 space-y-4">
+<div class="bg-surface-container-low p-6">
+<div class="flex items-center justify-between mb-8 border-b border-outline-variant/20 pb-2">
+<h3 class="font-mono text-sm tracking-widest font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+                                CLINICAL HISTORY
+                            </h3>
+<span class="font-mono text-[10px] text-on-secondary-container">LOGS: 024-RECORDS</span>
+</div>
+<div class="space-y-6">
+<div class="group flex items-start gap-4 transition-all">
+<div class="font-mono text-xs text-on-secondary-container pt-1 whitespace-nowrap">
+                                    NOV 24 <br/> 2023
+                                </div>
+<div class="flex-1 bg-surface-container p-4 border-l border-outline-variant/40 group-hover:border-primary-container transition-colors">
+<h4 class="font-headline text-lg text-on-surface mb-1">Diagnostic Output</h4>
+<p class="text-sm text-on-secondary-container mb-3 font-body">Neurological baseline maintained. Neuro-visual acuity at 98.4%. No anomalies detected.</p>
+<div class="flex justify-between items-center">
+<span class="inline-block px-2 py-0.5 bg-surface-container-highest text-[10px] font-mono">ENCRYPTED_PDF</span>
+<button class="font-mono text-xs text-primary flex items-center gap-1 hover:underline">[ OPEN_LOG ]</button>
+</div>
+</div>
+</div>
+<div class="group flex items-start gap-4">
+<div class="font-mono text-xs text-on-secondary-container pt-1 whitespace-nowrap">
+                                    OCT 12 <br/> 2023
+                                </div>
+<div class="flex-1 bg-surface-container p-4 border-l border-outline-variant/40 group-hover:border-primary-container transition-colors">
+<h4 class="font-headline text-lg text-on-surface mb-1">Baseline Routine</h4>
+<p class="text-sm text-on-secondary-container mb-3 font-body">Standard metabolic screening. Hematology levels within expected operational range.</p>
+<div class="flex justify-between items-center">
+<span class="inline-block px-2 py-0.5 bg-surface-container-highest text-[10px] font-mono">ENCRYPTED_PDF</span>
+<button class="font-mono text-xs text-primary flex items-center gap-1 hover:underline">[ OPEN_LOG ]</button>
+</div>
+</div>
+</div>
+<div class="group flex items-start gap-4">
+<div class="font-mono text-xs text-on-secondary-container pt-1 whitespace-nowrap">
+                                    SEPT 05 <br/> 2023
+                                </div>
+<div class="flex-1 bg-surface-container p-4 border-l border-outline-variant/40 group-hover:border-primary-container transition-colors">
+<h4 class="font-headline text-lg text-on-surface mb-1">Post-Op Clearance</h4>
+<p class="text-sm text-on-secondary-container mb-3 font-body">Verification of structural integrity post-optimization. Biological graft integration complete.</p>
+<div class="flex justify-between items-center">
+<span class="inline-block px-2 py-0.5 bg-surface-container-highest text-[10px] font-mono">ENCRYPTED_PDF</span>
+<button class="font-mono text-xs text-primary flex items-center gap-1 hover:underline">[ OPEN_LOG ]</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-surface-container-high p-6 border-t-2 border-primary-container">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary-container" data-icon="fingerprint">fingerprint</span>
+<span class="font-mono text-xs font-bold tracking-widest text-on-surface">BIO-SYNC ACTIVE</span>
+</div>
+<div class="h-2 w-full bg-surface-container-lowest mb-4">
+<div class="h-full amber-glow w-3/4"></div>
+</div>
+<p class="text-[10px] font-mono text-on-secondary-container leading-relaxed">
+                            LAST_SYNC: 04:22:01 UTC<br/>
+                            DEVICE: NEURAL_LINK_v4.2
+                        </p>
+</div>
+<div class="space-y-3">
+<button class="w-full amber-glow text-on-primary font-mono text-sm py-4 flex items-center justify-center gap-2 font-bold tracking-tighter">
+<span class="material-symbols-outlined" data-icon="add_chart">add_chart</span>
+                            INITIATE NEW TEST
+                        </button>
+<button class="w-full border border-outline/40 hover:border-primary text-on-surface font-mono text-sm py-4 flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+                            EXPORT DOSSIER
+                        </button>
+</div>
+<div class="bg-surface-container-lowest p-4 border border-outline-variant/10">
+<div class="flex justify-between items-end mb-4">
+<span class="font-mono text-[10px] text-on-secondary-container uppercase">Heart Rate</span>
+<span class="font-mono text-2xl text-primary font-bold">72 <small class="text-xs font-normal">BPM</small></span>
+</div>
+<div class="flex items-end gap-[2px] h-12 overflow-hidden">
+<div class="bg-primary/20 w-full h-1/2"></div>
+<div class="bg-primary/40 w-full h-3/4"></div>
+<div class="bg-primary/20 w-full h-1/2"></div>
+<div class="bg-primary/60 w-full h-full"></div>
+<div class="bg-primary/40 w-full h-2/3"></div>
+<div class="bg-primary/20 w-full h-1/4"></div>
+<div class="bg-primary/80 w-full h-5/6"></div>
+<div class="bg-primary/30 w-full h-1/2"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<button class="fixed bottom-24 right-6 w-14 h-14 amber-glow text-on-primary flex items-center justify-center shadow-2xl z-50">
+<span class="material-symbols-outlined" data-icon="add_chart">add_chart</span>
+</button>
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-outline-variant/20 px-4">
+<div class="max-w-md mx-auto flex justify-between items-center h-16">
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary" data-icon="grid_view">grid_view</span>
+<span class="text-[10px] font-mono text-on-secondary-container group-hover:text-primary">Command</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary" data-icon="biotech">biotech</span>
+<span class="text-[10px] font-mono text-on-secondary-container group-hover:text-primary">Tests</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary" data-icon="description">description</span>
+<span class="text-[10px] font-mono text-on-secondary-container group-hover:text-primary">Reports</span>
+</button>
+<button class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-primary" data-icon="person_2" style="font-variation-settings: 'FILL' 1;">person_2</span>
+<span class="text-[10px] font-mono text-primary font-bold">Profile</span>
+<div class="w-1 h-1 bg-primary mt-0.5"></div>
+</button>
+</div>
+</nav>
+</body></html>

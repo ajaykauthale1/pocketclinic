@@ -1,0 +1,235 @@
+<!-- Data Deep-Dive -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #131313;
+        }
+        .font-mono-data {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .font-headline {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .scanline-overlay {
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(255, 179, 0, 0.02) 0px,
+                rgba(255, 179, 0, 0.02) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+        }
+        .glass-panel {
+            background: rgba(57, 57, 57, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#353534",
+                        "on-background": "#e5e2e1",
+                        "background": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container": "#201f1f",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-highest": "#353534",
+                        "surface": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "on-surface-variant": "#d6c4ac",
+                        "on-secondary-container": "#b8b8b8",
+                        "primary": "#ffd79b",
+                        "primary-container": "#ffb300",
+                        "on-primary": "#432c00",
+                        "secondary": "#c7c6c6",
+                        "secondary-container": "#484949",
+                        "outline": "#9e8e78",
+                        "outline-variant": "#514532",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+  </head>
+<body class="text-on-background min-h-screen flex flex-col no-scrollbar">
+<header class="sticky top-0 z-50 bg-background border-b border-outline-variant/20 px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<h1 class="font-headline font-bold tracking-widest text-lg">POCKETCLINIC</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="text-[10px] text-secondary leading-none uppercase tracking-tighter font-mono-data">System Status</span>
+<div class="flex items-center gap-1.5 px-2 py-1 bg-surface-container-low border border-outline-variant/10">
+<span class="text-[8px] text-on-background">●</span>
+<span class="text-[10px] font-mono-data text-on-background">Sensors Ready</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="settings">settings</span>
+</div>
+</header>
+<main class="flex-1 p-6 grid grid-cols-1 md:grid-cols-4 gap-4 pb-32 max-w-7xl mx-auto w-full relative">
+<div class="absolute inset-0 scanline-overlay opacity-30 z-0"></div>
+<section class="md:col-span-1 bg-surface-container flex flex-col z-10">
+<div class="h-6 bg-surface-container-highest px-3 flex items-center justify-between">
+<span class="text-[10px] font-mono-data text-on-surface-variant uppercase tracking-widest">Vision_Acuity</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="visibility">visibility</span>
+</div>
+<div class="p-6 flex-1 flex flex-col items-center justify-center gap-4">
+<div class="text-9xl font-headline font-bold text-on-surface leading-none">E</div>
+<div class="w-full flex justify-between items-end">
+<span class="text-[10px] font-mono-data text-on-secondary-container">DIST: 20FT</span>
+<span class="text-2xl font-mono-data text-primary">20/20</span>
+</div>
+</div>
+</section>
+<section class="md:col-span-1 bg-surface-container flex flex-col z-10">
+<div class="h-6 bg-surface-container-highest px-3 flex items-center justify-between">
+<span class="text-[10px] font-mono-data text-on-surface-variant uppercase tracking-widest">Aural_Sense</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="hearing">hearing</span>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div class="flex flex-col gap-2">
+<span class="text-[10px] font-mono-data text-on-secondary-container">THRESHOLD DB</span>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-mono-data text-on-surface">18</span>
+<span class="text-sm font-mono-data text-on-secondary-container">dB</span>
+</div>
+</div>
+<div class="space-y-1 mt-6">
+<div class="h-1.5 w-full bg-surface-container-lowest">
+<div class="h-full bg-primary" style="width: 65%;"></div>
+</div>
+<div class="flex justify-between font-mono-data text-[8px] text-on-secondary-container">
+<span>0dB</span>
+<span>120dB</span>
+</div>
+</div>
+</div>
+</section>
+<section class="md:col-span-2 bg-surface-container flex flex-col z-10">
+<div class="h-6 bg-surface-container-highest px-3 flex items-center justify-between">
+<span class="text-[10px] font-mono-data text-on-surface-variant uppercase tracking-widest">Vascular_Pulse_PPG</span>
+<div class="flex items-center gap-2">
+<span class="text-[8px] text-primary">● LIVE</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="monitor_heart">monitor_heart</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col md:flex-row gap-6">
+<div class="flex-1 flex flex-col justify-center">
+<div class="h-32 w-full bg-surface-container-lowest relative overflow-hidden">
+<svg class="absolute inset-0 h-full w-full" preserveAspectRatio="none" viewBox="0 0 400 100">
+<path d="M0 50 L20 50 L30 20 L40 80 L50 50 L80 50 L90 20 L100 80 L110 50 L140 50 L150 20 L160 80 L170 50 L200 50 L210 20 L220 80 L230 50 L260 50 L270 20 L280 80 L290 50 L320 50 L330 20 L340 80 L350 50 L380 50 L390 20 L400 80" fill="none" stroke="#E5E2E1" stroke-width="1.5"></path>
+</svg>
+</div>
+</div>
+<div class="flex flex-col justify-center text-right">
+<span class="text-[10px] font-mono-data text-on-secondary-container uppercase">Current_Rate</span>
+<span class="text-7xl font-mono-data font-bold text-on-surface leading-none">72</span>
+<span class="text-sm font-mono-data text-primary mt-1">BPM [NORMAL]</span>
+</div>
+</div>
+</section>
+<section class="md:col-span-2 bg-surface-container flex flex-col z-10">
+<div class="h-6 bg-surface-container-highest px-3 flex items-center justify-between">
+<span class="text-[10px] font-mono-data text-on-surface-variant uppercase tracking-widest">Neural_Steady_Analysis</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="psychology">psychology</span>
+</div>
+<div class="p-6 flex-1 grid grid-cols-2 gap-8">
+<div class="flex flex-col justify-center border-r border-outline-variant/10 pr-6">
+<span class="text-[10px] font-mono-data text-on-secondary-container">TREMOR_PERCENTAGE</span>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-mono-data text-on-surface">0.04</span>
+<span class="text-xl font-mono-data text-on-secondary-container">%</span>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-[10px] font-mono-data text-on-secondary-container uppercase mb-2">Stability_Metrics</span>
+<ul class="space-y-2">
+<li class="flex justify-between items-center text-[10px] font-mono-data">
+<span class="text-on-surface-variant">MICRO_OSC</span>
+<span class="text-on-surface">NOMINAL</span>
+</li>
+<li class="flex justify-between items-center text-[10px] font-mono-data">
+<span class="text-on-surface-variant">VELOCITY</span>
+<span class="text-on-surface">2.4mm/s</span>
+</li>
+<li class="flex justify-between items-center text-[10px] font-mono-data">
+<span class="text-on-surface-variant">BIOMETRIC</span>
+<span class="text-primary">SECURE</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="md:col-span-2 bg-surface-container flex flex-col z-10">
+<div class="h-6 bg-surface-container-highest px-3 flex items-center justify-between">
+<span class="text-[10px] font-mono-data text-on-surface-variant uppercase tracking-widest">Recent_Diagnostics</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="history">history</span>
+</div>
+<div class="p-4 flex flex-col gap-px bg-outline-variant/5">
+<div class="flex justify-between items-center p-3 bg-surface-container-low">
+<div class="flex gap-4 items-center">
+<div class="w-2 h-2 bg-primary"></div>
+<span class="font-mono-data text-xs">BLOOD_PRESSURE_SYS</span>
+</div>
+<span class="font-mono-data text-xs text-on-surface">118 mmHg</span>
+</div>
+<div class="flex justify-between items-center p-3 bg-surface-container-low">
+<div class="flex gap-4 items-center">
+<div class="w-2 h-2 bg-secondary"></div>
+<span class="font-mono-data text-xs">TEMPERATURE_BASE</span>
+</div>
+<span class="font-mono-data text-xs text-on-surface">98.6 °F</span>
+</div>
+</div>
+</section>
+</main>
+<button class="fixed right-6 bottom-24 z-[60] w-16 h-16 bg-primary-container text-on-primary flex items-center justify-center shadow-2xl hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="add_chart">add_chart</span>
+</button>
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-surface-container-high border-t border-outline-variant/20 px-4 py-3">
+<div class="max-w-md mx-auto flex justify-between items-center">
+<div class="flex flex-col items-center gap-1 cursor-pointer">
+<span class="material-symbols-outlined text-primary" data-icon="grid_view">grid_view</span>
+<span class="text-[10px] font-mono-data text-on-surface tracking-tighter">Command</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer opacity-50">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span class="text-[10px] font-mono-data text-on-surface tracking-tighter">Tests</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer opacity-50">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="text-[10px] font-mono-data text-on-surface tracking-tighter">Reports</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer opacity-50">
+<span class="material-symbols-outlined" data-icon="person_2">person_2</span>
+<span class="text-[10px] font-mono-data text-on-surface tracking-tighter">Profile</span>
+</div>
+</div>
+</nav>
+</body></html>

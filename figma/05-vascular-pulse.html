@@ -1,0 +1,191 @@
+<!-- VascularPulse -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>POCKETCLINIC - Visual Acuity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#121212",
+              "surface-container-lowest": "#0e0e0e",
+              "on-surface": "#e5e2e1",
+              "primary": "#ffd79b",
+              "outline": "#9e8e78",
+              "on-surface-variant": "#d6c4ac",
+              "on-secondary-container": "#b8b8b8",
+              "primary-container": "#ffb300",
+              "surface-container-low": "#1c1b1b",
+              "on-primary": "#432c00",
+              "surface-container": "#201f1f",
+              "surface": "#131313",
+              "outline-variant": "#514532",
+              "on-background": "#e5e2e1",
+              "surface-container-high": "#2a2a2a",
+              "surface-container-highest": "#353534",
+              "secondary": "#c7c6c6",
+              "on-primary-fixed-variant": "#604100",
+              "surface-dim": "#131313"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"],
+              "mono": ["JetBrains Mono"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121212;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+        .mono-text {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .scanline {
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.02) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+        .optotype-e {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1;
+            color: #FFFFFF;
+            font-size: 24rem;
+            user-select: none;
+        }
+        .target-bracket {
+            border-left: 2px solid #FFB300;
+            border-top: 2px solid #FFB300;
+            border-bottom: 2px solid #FFB300;
+        }
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+    </style>
+  </head>
+<body class="bg-[#121212] flex flex-col min-h-screen">
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-transparent border-b border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<span class="mono-text font-bold tracking-widest text-sm">POCKETCLINIC</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="mono-text text-[10px] uppercase tracking-tighter opacity-70">Live Calibration</span>
+</div>
+<span class="material-symbols-outlined text-on-surface">settings</span>
+</div>
+</header>
+<main class="relative flex-1 flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 scanline opacity-20"></div>
+<div class="absolute left-12 top-1/2 -translate-y-1/2 flex h-3/4">
+<div class="flex flex-col justify-between py-2 mr-4 border-r border-white/10 pr-4">
+<span class="mono-text text-[10px] text-on-secondary-container">100M</span>
+<span class="mono-text text-[10px] text-on-secondary-container">80M</span>
+<span class="mono-text text-[10px] text-on-secondary-container">60M</span>
+<span class="mono-text text-[10px] text-on-secondary-container">40M</span>
+<span class="mono-text text-[10px] text-primary-container font-bold">20M</span>
+<span class="mono-text text-[10px] text-on-secondary-container">10M</span>
+<span class="mono-text text-[10px] text-on-secondary-container">5M</span>
+</div>
+<div class="relative flex flex-col justify-between h-full">
+<div class="absolute top-[55%] -left-2 h-[15%] w-4 target-bracket"></div>
+<div class="flex flex-col h-full justify-between">
+<div class="w-1 h-px bg-white/20"></div>
+<div class="w-1 h-px bg-white/20"></div>
+<div class="w-1 h-px bg-white/20"></div>
+<div class="w-1 h-px bg-white/20"></div>
+<div class="w-2 h-0.5 bg-primary-container"></div>
+<div class="w-1 h-px bg-white/20"></div>
+<div class="w-1 h-px bg-white/20"></div>
+<div class="w-1 h-px bg-white/20"></div>
+</div>
+<div class="absolute top-[58%] left-6">
+<span class="mono-text text-primary-container text-[12px] font-bold tracking-widest vertical-text uppercase">Target Zone</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center">
+<div class="optotype-e">E</div>
+<div class="mt-12 flex flex-col items-center gap-1">
+<div class="flex items-center gap-3">
+<span class="text-primary-container">▲</span>
+<span class="mono-text text-xl tracking-[0.2em] font-light">6.00 METERS</span>
+<span class="text-primary-container">▲</span>
+</div>
+<div class="mono-text text-[10px] text-on-secondary-container tracking-widest uppercase">Maintain Distance</div>
+</div>
+</div>
+<div class="absolute right-12 top-1/2 -translate-y-1/2 flex flex-col gap-8 items-end">
+<div class="text-right">
+<div class="mono-text text-[10px] uppercase text-on-secondary-container mb-1">Acuity Level</div>
+<div class="mono-text text-4xl font-light text-on-surface">20/20</div>
+</div>
+<div class="text-right">
+<div class="mono-text text-[10px] uppercase text-on-secondary-container mb-1">Illumination</div>
+<div class="mono-text text-xl font-light text-on-surface">120 LUX</div>
+</div>
+<div class="text-right">
+<div class="mono-text text-[10px] uppercase text-on-secondary-container mb-1">Frame Reference</div>
+<div class="mono-text text-sm font-mono text-primary-container">#X-992-CLINIC</div>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-24">
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 border border-white/10 flex items-center justify-center relative">
+<div class="absolute top-0 left-0 w-1 h-1 bg-primary-container"></div>
+<span class="material-symbols-outlined text-on-surface">grid_view</span>
+</div>
+<span class="mono-text text-[9px] mt-2 tracking-widest uppercase text-on-secondary-container">Command</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 border border-primary-container flex items-center justify-center relative bg-primary-container/5">
+<div class="absolute top-0 left-0 w-1 h-1 bg-primary-container"></div>
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">biotech</span>
+</div>
+<span class="mono-text text-[9px] mt-2 tracking-widest uppercase text-primary-container">Tests</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 border border-white/10 flex items-center justify-center relative">
+<div class="absolute top-0 left-0 w-1 h-1 bg-primary-container"></div>
+<span class="material-symbols-outlined text-on-surface">description</span>
+</div>
+<span class="mono-text text-[9px] mt-2 tracking-widest uppercase text-on-secondary-container">Reports</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 border border-white/10 flex items-center justify-center relative">
+<div class="absolute top-0 left-0 w-1 h-1 bg-primary-container"></div>
+<span class="material-symbols-outlined text-on-surface">person_2</span>
+</div>
+<span class="mono-text text-[9px] mt-2 tracking-widest uppercase text-on-secondary-container">Profile</span>
+</div>
+</div>
+</main>
+<div class="fixed bottom-4 right-4 z-50">
+<div class="w-14 h-14 bg-primary-container flex items-center justify-center shadow-[0_0_20px_rgba(255,179,0,0.2)]">
+<span class="material-symbols-outlined text-on-primary text-3xl">add_chart</span>
+</div>
+</div>
+</body></html>

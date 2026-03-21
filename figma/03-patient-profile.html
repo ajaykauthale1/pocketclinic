@@ -1,0 +1,281 @@
+<!-- Patient Profile -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#1a1c1c",
+              "inverse-surface": "#e5e2e1",
+              "tertiary-fixed": "#b5ebff",
+              "tertiary-container": "#00d2fe",
+              "on-tertiary-fixed": "#001f28",
+              "on-surface-variant": "#d6c4ac",
+              "on-tertiary-fixed-variant": "#004e60",
+              "on-secondary-container": "#b8b8b8",
+              "error": "#ffb4ab",
+              "secondary-fixed-dim": "#c7c6c6",
+              "surface-bright": "#393939",
+              "on-primary-fixed": "#281900",
+              "surface-container-highest": "#353534",
+              "secondary-container": "#484949",
+              "tertiary-fixed-dim": "#43d6ff",
+              "on-background": "#e5e2e1",
+              "surface-dim": "#131313",
+              "on-secondary-fixed-variant": "#464747",
+              "surface-container": "#201f1f",
+              "on-error-container": "#ffdad6",
+              "primary-fixed-dim": "#ffba38",
+              "on-secondary": "#2f3131",
+              "background": "#131313",
+              "surface-container-lowest": "#0e0e0e",
+              "secondary-fixed": "#e3e2e2",
+              "outline": "#9e8e78",
+              "on-surface": "#e5e2e1",
+              "tertiary": "#a4e7ff",
+              "surface-variant": "#353534",
+              "on-primary-container": "#6b4900",
+              "on-tertiary-container": "#00566a",
+              "outline-variant": "#514532",
+              "error-container": "#93000a",
+              "primary-container": "#ffb300",
+              "surface-tint": "#ffba38",
+              "on-primary-fixed-variant": "#604100",
+              "surface-container-high": "#2a2a2a",
+              "surface": "#131313",
+              "primary-fixed": "#ffdeac",
+              "inverse-on-surface": "#313030",
+              "secondary": "#c7c6c6",
+              "primary": "#ffd79b",
+              "on-primary": "#432c00",
+              "surface-container-low": "#1c1b1b",
+              "on-tertiary": "#003543",
+              "on-error": "#690005",
+              "inverse-primary": "#7e5700"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"],
+              "mono": ["JetBrains Mono"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .scanline {
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.05),
+                rgba(0, 0, 0, 0.05) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<header class="sticky top-0 z-50 bg-surface border-b border-outline-variant/20 px-4 h-14 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="terminal">terminal</span>
+<h1 class="font-mono text-sm tracking-widest uppercase font-bold text-on-surface">POCKETCLINIC</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-mono text-[10px] text-outline px-2 py-0.5 border border-outline/30">v4.2.0-STABLE</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-icon="settings">settings</span>
+</div>
+</header>
+<main class="max-w-7xl mx-auto p-4 md:p-8 space-y-8 relative">
+<div class="scanline absolute inset-0 z-0"></div>
+<section class="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6 border-l-2 border-primary-container pl-6 py-2">
+<div>
+<p class="font-mono text-xs text-primary-container mb-1 tracking-tighter">ENVIRONMENT // HARDWARE_DIAGNOSTICS</p>
+<h2 class="font-headline text-4xl font-light tracking-tight">Sensor Calibration</h2>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="bg-primary-container text-on-primary px-6 py-2 font-mono text-xs font-bold flex items-center gap-2 hover:brightness-110 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="refresh">refresh</span>
+                    RE-SCAN ALL BUSSES
+                </button>
+<button class="border border-outline text-primary px-6 py-2 font-mono text-xs font-bold flex items-center gap-2 hover:bg-primary/10 transition-all">
+                    SYSTEM RESET
+                </button>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-1 relative z-10">
+<div class="md:col-span-8 bg-surface-container-low p-6 space-y-6">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-mono text-xs text-outline uppercase tracking-widest">Active Hardware Stack</h3>
+<div class="flex items-center gap-2 font-mono text-[10px] text-secondary">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> 8 SENSORS ONLINE
+                    </div>
+</div>
+<div class="group bg-surface-container p-4 border-l border-primary-container/30 hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col md:flex-row justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-lg font-medium text-on-surface">PPG_SENSOR_v4</span>
+<span class="text-[10px] font-mono bg-surface-container-lowest px-2 text-primary-container border border-primary-container/20">[ ● CALIBRATED ]</span>
+</div>
+<p class="text-xs text-on-secondary-container font-mono">ADDR: 0x4A // FREQ: 100Hz // PRECISION: 16-BIT</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="bg-surface-container-lowest hover:bg-surface-container-highest text-on-surface font-mono text-[10px] px-4 py-2 border border-outline-variant/30">RUN SELF-TEST</button>
+<button class="bg-primary-container text-on-primary font-mono text-[10px] px-4 py-2 font-bold">CALIBRATE</button>
+</div>
+</div>
+<div class="mt-4 h-12 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute inset-0 flex items-end opacity-40">
+<div class="w-full h-[60%] bg-gradient-to-t from-primary-container/20 to-transparent"></div>
+</div>
+<div class="absolute inset-0 flex justify-between items-center px-4 font-mono text-[9px] text-outline">
+<span>WAVELENGTH: 660nm / 940nm</span>
+<span class="text-primary">NOISE_FLOOR: -112dBm</span>
+</div>
+</div>
+</div>
+<div class="group bg-surface-container p-4 border-l border-outline-variant/30 hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col md:flex-row justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-lg font-medium text-on-surface">ACCELEROMETER_Z</span>
+<span class="text-[10px] font-mono bg-error-container px-2 text-on-error-container border border-error/20">[ ▲ REQUIRES SYNC ]</span>
+</div>
+<p class="text-xs text-on-secondary-container font-mono">ADDR: 0x1E // RANGE: +/- 16G // AXIS: TRI-AXIAL</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="bg-surface-container-lowest hover:bg-surface-container-highest text-on-surface font-mono text-[10px] px-4 py-2 border border-outline-variant/30">RESET AXIS</button>
+<button class="bg-primary-container text-on-primary font-mono text-[10px] px-4 py-2 font-bold">CALIBRATE</button>
+</div>
+</div>
+<div class="mt-4 grid grid-cols-3 gap-2">
+<div class="bg-surface-container-lowest p-2 border border-outline-variant/10">
+<span class="block text-[9px] font-mono text-outline uppercase">X-Axis</span>
+<span class="block text-sm font-mono font-bold text-on-surface">0.002 m/s²</span>
+</div>
+<div class="bg-surface-container-lowest p-2 border border-outline-variant/10">
+<span class="block text-[9px] font-mono text-outline uppercase">Y-Axis</span>
+<span class="block text-sm font-mono font-bold text-on-surface">-0.015 m/s²</span>
+</div>
+<div class="bg-surface-container-lowest p-2 border border-primary-container/50">
+<span class="block text-[9px] font-mono text-primary-container uppercase font-bold">Z-Axis</span>
+<span class="block text-sm font-mono font-bold text-primary">9.810 m/s²</span>
+</div>
+</div>
+</div>
+<div class="group bg-surface-container p-4 border-l border-primary-container/30 hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col md:flex-row justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-lg font-medium text-on-surface">DEPTH_AR_CORE</span>
+<span class="text-[10px] font-mono bg-surface-container-lowest px-2 text-primary-container border border-primary-container/20">[ ● CALIBRATED ]</span>
+</div>
+<p class="text-xs text-on-secondary-container font-mono">API: v2.1.0 // ENGINE: OPTICAL_FLOW // LATENCY: 12ms</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="bg-primary-container text-on-primary font-mono text-[10px] px-4 py-2 font-bold">VISUALIZE</button>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-1">
+<div class="bg-surface-container-highest p-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="tune">tune</span>
+<h3 class="font-mono text-xs font-bold tracking-widest uppercase">System Preferences</h3>
+</div>
+<div class="bg-surface-container p-6 flex-grow space-y-8">
+<div class="space-y-3">
+<label class="font-mono text-[10px] text-outline uppercase tracking-widest">Data Retention Policy</label>
+<select class="w-full bg-surface-container-lowest border-none text-on-surface font-mono text-sm focus:ring-1 focus:ring-primary-container p-3">
+<option>LOCAL_ONLY (ENCRYPTED)</option>
+<option>HYBRID_SYNC (LATENCY_PRIORITY)</option>
+<option>CLOUD_ARCHIVE</option>
+</select>
+<p class="text-[10px] text-on-secondary-container leading-relaxed">System clears volatile telemetry every 24 hours. Calibration logs are persistent.</p>
+</div>
+<div class="space-y-4">
+<label class="font-mono text-[10px] text-outline uppercase tracking-widest">Diagnostic Level</label>
+<div class="space-y-2">
+<div class="flex items-center justify-between group cursor-pointer">
+<span class="font-mono text-sm text-on-surface">VERBOSE_LOGGING</span>
+<div class="w-10 h-5 bg-surface-container-lowest border border-outline-variant relative">
+<div class="absolute right-1 top-1 bottom-1 w-3 bg-primary-container"></div>
+</div>
+</div>
+<div class="flex items-center justify-between group cursor-pointer opacity-50">
+<span class="font-mono text-sm text-on-surface">AUTO_REPAIR_DRIVERS</span>
+<div class="w-10 h-5 bg-surface-container-lowest border border-outline-variant relative">
+<div class="absolute left-1 top-1 bottom-1 w-3 bg-outline"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-6 border-t border-outline-variant/20">
+<div class="bg-surface-container-lowest p-4 space-y-2">
+<div class="flex justify-between font-mono text-[10px]">
+<span class="text-outline">CPU_LOAD</span>
+<span class="text-on-surface">14.2%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest">
+<div class="h-full bg-primary-container w-[14%]"></div>
+</div>
+<div class="flex justify-between font-mono text-[10px] pt-2">
+<span class="text-outline">BUS_VOLTAGE</span>
+<span class="text-primary">3.28V</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class="relative z-10 bg-surface-container p-1">
+<div class="bg-surface-container-lowest p-4 border border-outline-variant/10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-mono text-[10px] font-bold text-outline tracking-[0.2em] uppercase">Calibration Event History</h3>
+<span class="material-symbols-outlined text-outline text-sm" data-icon="terminal">terminal</span>
+</div>
+<div class="font-mono text-[11px] leading-relaxed space-y-1 text-on-surface-variant overflow-x-auto">
+<p><span class="text-outline">[14:02:11]</span> INITIALIZING BUS 0x01... SUCCESS</p>
+<p><span class="text-outline">[14:02:12]</span> ATTACHING PPG_SENSOR_v4 @ 0x4A</p>
+<p><span class="text-outline">[14:02:15]</span> <span class="text-primary-container">ALERT:</span> ACCELEROMETER_Z DRIFT DETECTED &gt; 0.05 m/s²</p>
+<p><span class="text-outline">[14:03:01]</span> HANDSHAKE COMPLETE. POCKETCLINIC KERNEL v4.2 READY.</p>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-surface-container-low border-t border-outline-variant/20">
+<div class="max-w-7xl mx-auto flex justify-around items-center h-16">
+<button class="flex flex-col items-center justify-center gap-1 group w-full">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="terminal">terminal</span>
+<span class="font-mono text-[10px] text-on-secondary-container">Command</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 group w-full">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="biotech">biotech</span>
+<span class="font-mono text-[10px] text-on-secondary-container">Tests</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 group w-full">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="description">description</span>
+<span class="font-mono text-[10px] text-on-secondary-container">Reports</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 group w-full border-t-2 border-primary-container bg-surface-container-high/50">
+<span class="material-symbols-outlined text-primary-container" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-mono text-[10px] text-on-surface font-bold">Profile</span>
+</button>
+</div>
+</nav>
+<div class="h-20"></div>
+</body></html>

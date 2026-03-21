@@ -1,0 +1,182 @@
+<!-- Results Report -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#131313",
+              "surface": "#131313",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container-low": "#1c1b1b",
+              "surface-container": "#201f1f",
+              "surface-container-high": "#2a2a2a",
+              "surface-container-highest": "#353534",
+              "surface-variant": "#353534",
+              "on-surface": "#e5e2e1",
+              "on-surface-variant": "#d6c4ac",
+              "on-background": "#e5e2e1",
+              "on-secondary-container": "#b8b8b8",
+              "primary": "#ffd79b",
+              "primary-container": "#ffb300",
+              "on-primary": "#432c00",
+              "secondary": "#c7c6c6",
+              "secondary-container": "#484949",
+              "outline": "#9e8e78",
+              "outline-variant": "#514532"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"],
+              "mono": ["JetBrains Mono"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .scanline {
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.03) 0px,
+                rgba(0, 0, 0, 0.03) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+        }
+    </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- Backdrop: dimmed command dashboard behind modal -->
+<div class="flex-grow p-6 opacity-40 grayscale pointer-events-none">
+<header class="flex justify-between items-center mb-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-mono font-bold tracking-widest text-lg">POCKETCLINIC</span>
+</div>
+<span class="material-symbols-outlined">settings</span>
+</header>
+<div class="grid grid-cols-2 gap-4">
+<div class="h-32 bg-surface-container-low p-4">
+<div class="text-[10px] font-mono opacity-50 mb-2">LAST_TEST_DATA</div>
+<div class="h-1 w-full bg-surface-variant mb-2"></div>
+<div class="h-1 w-2/3 bg-surface-variant"></div>
+</div>
+<div class="h-32 bg-surface-container-low p-4">
+<div class="text-[10px] font-mono opacity-50 mb-2">ACTIVE_SENSORS</div>
+<div class="h-1 w-full bg-surface-variant mb-2"></div>
+<div class="h-1 w-2/3 bg-surface-variant"></div>
+</div>
+</div>
+</div>
+<!-- Bottom Sheet Modal -->
+<div class="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 flex flex-col justify-end">
+<div class="w-full bg-[#1E1E1E] flex flex-col items-center pt-3 pb-2">
+<div class="w-12 h-1 bg-surface-variant rounded-full"></div>
+</div>
+<div class="w-full bg-[#1E1E1E] px-8 pb-12 overflow-y-auto max-h-[90vh]">
+<div class="mt-8 mb-12">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">biotech</span>
+<span class="font-mono text-[10px] text-primary tracking-widest uppercase">Clinical Initialization</span>
+</div>
+<h1 class="text-4xl font-headline font-bold text-white tracking-tighter leading-none">HEARING THRESHOLD</h1>
+<div class="mt-4 flex items-center gap-4">
+<div class="px-2 py-0.5 bg-surface-container-highest text-on-surface-variant text-[10px] font-mono">ID: HC-4092-A</div>
+<div class="px-2 py-0.5 bg-primary-container/10 text-primary-container text-[10px] font-mono">VERSION 2.4.0</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/20 mb-12">
+<div class="bg-surface-container-low p-6 flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-on-surface">headphones</span>
+<span class="font-mono text-[10px] opacity-30">01</span>
+</div>
+<p class="text-on-surface text-sm font-body leading-relaxed">Ensure headphones are securely connected and volume is set to system baseline.</p>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-on-surface">quiet_time</span>
+<span class="font-mono text-[10px] opacity-30">02</span>
+</div>
+<p class="text-on-surface text-sm font-body leading-relaxed">Minimize surrounding activity. Ambient noise must remain below 35dB.</p>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-on-surface">touch_app</span>
+<span class="font-mono text-[10px] opacity-30">03</span>
+</div>
+<p class="text-on-surface text-sm font-body leading-relaxed">Press the trigger as soon as you detect any tone, regardless of frequency or volume.</p>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-on-surface">timer</span>
+<span class="font-mono text-[10px] opacity-30">04</span>
+</div>
+<p class="text-on-surface text-sm font-body leading-relaxed">The clinical procedure takes approximately 4-6 minutes per ear channel.</p>
+</div>
+</div>
+<div class="mb-12">
+<div class="flex justify-between items-end mb-3">
+<span class="font-mono text-[11px] text-white tracking-wider uppercase">Checking ambient noise...</span>
+<span class="font-mono text-[11px] text-primary">72%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-white w-[72%]"></div>
+</div>
+<div class="flex justify-between mt-2">
+<div class="flex items-center gap-1.5">
+<span class="text-[10px] text-on-secondary-container font-mono tracking-tighter">ENVIRONMENT:</span>
+<span class="text-[10px] text-primary font-mono tracking-tighter uppercase">Analyzing_Spectrum</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="text-[10px] text-on-secondary-container font-mono">MIC_READY</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<button class="w-full h-16 bg-primary-container hover:bg-primary text-on-primary font-headline font-bold text-xl tracking-widest flex items-center justify-center gap-3 transition-colors">
+<span class="material-symbols-outlined text-2xl">play_arrow</span>
+                    START TEST
+                </button>
+<div class="flex justify-center">
+<button class="font-mono text-[10px] text-on-secondary-container hover:text-white uppercase tracking-widest py-2 border-b border-transparent hover:border-white transition-all">
+                        CANCEL_INITIALIZATION
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<nav class="fixed bottom-0 w-full bg-surface-container-lowest border-t border-outline-variant/10 px-8 py-3 flex justify-between items-center opacity-20 pointer-events-none">
+<div class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+<span class="text-[10px] font-mono mt-1">Command</span>
+</div>
+<div class="flex flex-col items-center text-on-secondary-container">
+<span class="material-symbols-outlined text-2xl">biotech</span>
+<span class="text-[10px] font-mono mt-1">Tests</span>
+</div>
+<div class="flex flex-col items-center text-on-secondary-container">
+<span class="material-symbols-outlined text-2xl">description</span>
+<span class="text-[10px] font-mono mt-1">Reports</span>
+</div>
+<div class="flex flex-col items-center text-on-secondary-container">
+<span class="material-symbols-outlined text-2xl">person_2</span>
+<span class="text-[10px] font-mono mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

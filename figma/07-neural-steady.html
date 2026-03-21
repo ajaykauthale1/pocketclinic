@@ -1,0 +1,273 @@
+<!-- NeuralSteady -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>POCKETCLINIC | Data Deep-Dive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#1a1c1c",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-fixed": "#b5ebff",
+                        "tertiary-container": "#00d2fe",
+                        "on-tertiary-fixed": "#001f28",
+                        "on-surface-variant": "#d6c4ac",
+                        "on-tertiary-fixed-variant": "#004e60",
+                        "on-secondary-container": "#b8b8b8",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "surface-bright": "#393939",
+                        "on-primary-fixed": "#281900",
+                        "surface-container-highest": "#353534",
+                        "secondary-container": "#484949",
+                        "tertiary-fixed-dim": "#43d6ff",
+                        "on-background": "#e5e2e1",
+                        "surface-dim": "#131313",
+                        "on-secondary-fixed-variant": "#464747",
+                        "surface-container": "#201f1f",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed-dim": "#ffba38",
+                        "on-secondary": "#2f3131",
+                        "background": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed": "#e3e2e2",
+                        "outline": "#9e8e78",
+                        "on-surface": "#e5e2e1",
+                        "tertiary": "#a4e7ff",
+                        "surface-variant": "#353534",
+                        "on-primary-container": "#6b4900",
+                        "on-tertiary-container": "#00566a",
+                        "outline-variant": "#514532",
+                        "error-container": "#93000a",
+                        "primary-container": "#ffb300",
+                        "surface-tint": "#ffba38",
+                        "on-primary-fixed-variant": "#604100",
+                        "surface-container-high": "#2a2a2a",
+                        "surface": "#131313",
+                        "primary-fixed": "#ffdeac",
+                        "inverse-on-surface": "#313030",
+                        "secondary": "#c7c6c6",
+                        "primary": "#ffd79b",
+                        "on-primary": "#432c00",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary": "#003543",
+                        "on-error": "#690005",
+                        "inverse-primary": "#7e5700"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk", "monospace"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scanline {
+            background: linear-gradient(to bottom, rgba(255, 179, 0, 0.02) 50%, rgba(0, 0, 0, 0) 50%);
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+        .chart-grid {
+            background-image:
+                linear-gradient(to right, rgba(81, 69, 50, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(81, 69, 50, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
+<header class="sticky top-0 z-50 bg-surface-dim border-b border-outline-variant/20 h-16 flex items-center px-4 justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="terminal">terminal</span>
+<h1 class="font-headline font-bold tracking-widest text-lg">POCKETCLINIC</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<main class="min-h-screen relative pb-24">
+<div class="fixed inset-0 scanline z-10 opacity-50"></div>
+<div class="max-w-7xl mx-auto p-4 md:p-8 space-y-8 relative z-20">
+<section class="flex flex-col md:flex-row justify-between items-end gap-6 border-b border-outline-variant/30 pb-6">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-primary-container">
+<span class="font-mono text-xs uppercase tracking-[0.2em]">Diagnostic Session // 0922-X</span>
+</div>
+<h2 class="font-headline text-4xl font-light tracking-tight">NEURAL STABILITY INDEX</h2>
+<p class="text-on-secondary-container max-w-md">Longitudinal analysis of cortical coherence and synaptic firing variance over selected epoch.</p>
+</div>
+<div class="flex bg-surface-container-lowest p-1">
+<button class="px-6 py-2 font-mono text-xs hover:bg-surface-container-high transition-colors">24H</button>
+<button class="px-6 py-2 font-mono text-xs hover:bg-surface-container-high transition-colors">7D</button>
+<button class="px-6 py-2 font-mono text-xs bg-primary-container text-on-primary font-bold">30D</button>
+<button class="px-6 py-2 font-mono text-xs hover:bg-surface-container-high transition-colors">ALL</button>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-1">
+<div class="md:col-span-9 bg-surface-container-low min-h-[500px] relative p-8 group">
+<div class="absolute top-0 left-0 w-full h-1 bg-surface-container-highest"></div>
+<div class="flex justify-between items-start mb-8">
+<div>
+<span class="font-mono text-xs text-on-secondary-container uppercase">Trendline Analysis</span>
+<div class="flex items-center gap-4 mt-1">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-on-surface"></div>
+<span class="font-mono text-[10px] text-on-surface uppercase">Baseline</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-primary-container"></div>
+<span class="font-mono text-[10px] text-primary-container uppercase">Anomaly Detected</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-mono text-2xl text-on-surface">84.2<span class="text-sm opacity-50 ml-1">σ</span></span>
+</div>
+</div>
+<div class="relative h-80 w-full chart-grid border-l border-b border-outline-variant/40">
+<svg class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 1000 320">
+<path d="M0 240 L50 220 L100 230 L150 180 L200 190 L250 160 L300 170 L350 140 L400 150 L450 100 L500 110 L550 80 L600 280 L650 260 L700 240 L750 250 L800 210 L850 220 L900 190 L950 200 L1000 160" fill="none" stroke="white" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<circle class="animate-pulse" cx="600" cy="280" fill="#FFB300" r="6"></circle>
+<text fill="#FFB300" font-family="JetBrains Mono" font-size="12" x="610" y="300">STRESS_EVENT_A</text>
+<circle cx="450" cy="100" fill="#FFB300" r="6"></circle>
+</svg>
+<div class="absolute -left-12 inset-y-0 flex flex-col justify-between font-mono text-[10px] text-on-secondary-container py-2">
+<span>100</span>
+<span>75</span>
+<span>50</span>
+<span>25</span>
+<span>0</span>
+</div>
+<div class="absolute -bottom-8 inset-x-0 flex justify-between font-mono text-[10px] text-on-secondary-container px-2">
+<span>OCT 01</span>
+<span>OCT 10</span>
+<span>OCT 20</span>
+<span>OCT 30</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-3 space-y-1">
+<div class="bg-surface-container p-6 border-l-4 border-primary-container">
+<span class="font-mono text-xs text-on-secondary-container uppercase">Mean Stability</span>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="text-4xl font-mono font-bold">92%</span>
+<span class="text-xs font-mono text-primary-container">▲ 2.4%</span>
+</div>
+</div>
+<div class="bg-surface-container p-6">
+<span class="font-mono text-xs text-on-secondary-container uppercase">Anomaly Count</span>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="text-4xl font-mono font-bold text-primary-container">02</span>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="text-[10px] font-mono uppercase">Requires Verification</span>
+</div>
+</div>
+<div class="bg-surface-container p-6">
+<span class="font-mono text-xs text-on-secondary-container uppercase">Correlation Index</span>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="text-4xl font-mono font-bold">0.88</span>
+</div>
+<div class="mt-4 h-1 w-full bg-surface-container-lowest">
+<div class="h-full bg-on-surface w-[88%]"></div>
+</div>
+</div>
+<button class="w-full bg-primary-container p-6 flex flex-col items-start gap-4 group">
+<span class="text-on-primary font-mono font-bold text-xs uppercase tracking-widest">Generate Detailed PDF</span>
+<span class="material-symbols-outlined text-on-primary transition-transform group-hover:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-mono text-sm tracking-[0.3em] uppercase opacity-60">Anomaly Log_</h3>
+<div class="h-[1px] flex-grow mx-8 bg-outline-variant/20"></div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest text-left font-mono text-[10px] text-on-secondary-container uppercase tracking-widest">
+<th class="p-4 border-r border-outline-variant/10">Timestamp</th>
+<th class="p-4 border-r border-outline-variant/10">Metric Value</th>
+<th class="p-4 border-r border-outline-variant/10">Variance %</th>
+<th class="p-4">Stability Marker</th>
+</tr>
+</thead>
+<tbody class="font-mono text-sm">
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors group">
+<td class="p-4 border-r border-outline-variant/10">2023.10.14 | 22:15:04</td>
+<td class="p-4 border-r border-outline-variant/10">24.2 ms</td>
+<td class="p-4 border-r border-outline-variant/10 text-primary-container">+14.2%</td>
+<td class="p-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">change_history</span>
+<span>CRITICAL_DEVIATION</span>
+</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container transition-colors">
+<td class="p-4 border-r border-outline-variant/10">2023.10.12 | 04:32:11</td>
+<td class="p-4 border-r border-outline-variant/10">18.5 ms</td>
+<td class="p-4 border-r border-outline-variant/10">-0.2%</td>
+<td class="p-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">circle</span>
+<span>NOMINAL_OUTPUT</span>
+</td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="p-4 border-r border-outline-variant/10">2023.10.10 | 11:44:29</td>
+<td class="p-4 border-r border-outline-variant/10">21.8 ms</td>
+<td class="p-4 border-r border-outline-variant/10 text-primary-container">+8.1%</td>
+<td class="p-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">change_history</span>
+<span>ALERT_THRESHOLD</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-surface-container-lowest border-t border-outline-variant/30 h-16 px-6">
+<div class="max-w-md mx-auto h-full flex items-center justify-between">
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-on-secondary-container group-hover:text-primary-container transition-colors">terminal</span>
+<span class="text-[10px] font-mono uppercase text-on-secondary-container group-hover:text-primary-container">Command</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">biotech</span>
+<span class="text-[10px] font-mono uppercase text-primary-container font-bold">Tests</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-on-secondary-container group-hover:text-primary-container transition-colors">description</span>
+<span class="text-[10px] font-mono uppercase text-on-secondary-container group-hover:text-primary-container">Reports</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-on-secondary-container group-hover:text-primary-container transition-colors">person</span>
+<span class="text-[10px] font-mono uppercase text-on-secondary-container group-hover:text-primary-container">Profile</span>
+</button>
+</div>
+</nav>
+</body></html>
